@@ -8,6 +8,7 @@ const dataFiles = [
 
 let army = [];
 let totalPoints = 0;
+let targetArmySize = 2000;
 
 const CATEGORY_LIMITS = {
     "Lords": { max: 0.25 },
@@ -16,6 +17,7 @@ const CATEGORY_LIMITS = {
     "Special": { max: 0.50 },
     "Rare": { max: 0.25 }
 };
+
 
 
 async function loadAllData() {
@@ -165,10 +167,16 @@ function addUnit(unit, quantity, upgradesContainer, category) {
     // Simulate new total before adding
     const simulatedTotal = totalPoints + total;
 
-    if (!validateCategoryLimit(category, total, simulatedTotal)) {
+    if (simulatedTotal > targetArmySize) {
+        alert("Adding this unit exceeds the target army size.");
+        return;
+    }
+    
+    if (!validateCategoryLimit(category, total)) {
         alert(`Cannot add ${unit.name}. Category limit exceeded.`);
         return;
     }
+
 
     army.push({
         name: unit.name,
@@ -215,6 +223,9 @@ function updateArmyDisplay() {
 
         li.appendChild(removeBtn);
         list.appendChild(li);
+
+        document.getElementById("remainingPoints").textContent =
+        targetArmySize - totalPoints;
     });
 
     document.getElementById("totalPoints").textContent = totalPoints;
@@ -232,7 +243,7 @@ function updateArmyDisplay() {
 
 }
 
-function validateCategoryLimit(category, newUnitPoints, simulatedTotal) {
+function validateCategoryLimit(category, newUnitPoints) {
 
     const limits = CATEGORY_LIMITS[category];
     if (!limits) return true;
@@ -242,13 +253,14 @@ function validateCategoryLimit(category, newUnitPoints, simulatedTotal) {
         .reduce((sum, u) => sum + u.total, 0) + newUnitPoints;
 
     if (limits.max) {
-        if (categoryPoints > simulatedTotal * limits.max) {
+        if (categoryPoints > targetArmySize * limits.max) {
             return false;
         }
     }
 
     return true;
 }
+
 
 function validateArmyComposition() {
 
@@ -263,20 +275,38 @@ function validateArmyComposition() {
             .reduce((sum, u) => sum + u.total, 0);
 
         if (limits.min) {
-            if (totalPoints > 0 && categoryPoints < totalPoints * limits.min) {
-                warnings.push(`${category} must be at least ${limits.min * 100}%`);
+            if (categoryPoints < targetArmySize * limits.min) {
+                warnings.push(
+                    `${category} must be at least ${limits.min * 100}% (${Math.ceil(targetArmySize * limits.min)} pts)`
+                );
             }
         }
 
         if (limits.max) {
-            if (categoryPoints > totalPoints * limits.max) {
-                warnings.push(`${category} exceeds ${limits.max * 100}%`);
+            if (categoryPoints > targetArmySize * limits.max) {
+                warnings.push(
+                    `${category} exceeds ${limits.max * 100}% (${Math.floor(targetArmySize * limits.max)} pts)`
+                );
             }
         }
     });
 
+    if (totalPoints > targetArmySize) {
+        warnings.push("Army exceeds target size.");
+    }
+
+    if (totalPoints < targetArmySize) {
+        warnings.push(`Army is ${targetArmySize - totalPoints} pts under target.`);
+    }
+
     return warnings;
 }
+
+
+document.getElementById("armySizeInput").addEventListener("input", (e) => {
+    targetArmySize = parseInt(e.target.value) || 0;
+    updateArmyDisplay();
+});
 
 
 loadAllData();
