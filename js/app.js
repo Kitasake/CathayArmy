@@ -122,7 +122,8 @@ function renderCategories(datasets) {
             const button = document.createElement("button");
             button.textContent = "Add";
             button.onclick = () =>
-                addUnit(unit, parseInt(qtyInput.value), upgradesContainer);
+            addUnit(unit, parseInt(qtyInput.value), upgradesContainer, dataset.category);
+
 
             unitDiv.appendChild(label);
             unitDiv.appendChild(qtyInput);
@@ -217,6 +218,65 @@ function updateArmyDisplay() {
     });
 
     document.getElementById("totalPoints").textContent = totalPoints;
+    const warnings = validateArmyComposition();
+
+    const warningDiv = document.getElementById("warnings");
+    warningDiv.innerHTML = "";
+    
+    warnings.forEach(w => {
+        const p = document.createElement("p");
+        p.style.color = "red";
+        p.textContent = w;
+        warningDiv.appendChild(p);
+    });
+
 }
+
+function validateCategoryLimit(category, newUnitPoints, simulatedTotal) {
+
+    const limits = CATEGORY_LIMITS[category];
+    if (!limits) return true;
+
+    const categoryPoints = army
+        .filter(u => u.category === category)
+        .reduce((sum, u) => sum + u.total, 0) + newUnitPoints;
+
+    if (limits.max) {
+        if (categoryPoints > simulatedTotal * limits.max) {
+            return false;
+        }
+    }
+
+    return true;
+}
+
+function validateArmyComposition() {
+
+    const warnings = [];
+
+    Object.keys(CATEGORY_LIMITS).forEach(category => {
+
+        const limits = CATEGORY_LIMITS[category];
+
+        const categoryPoints = army
+            .filter(u => u.category === category)
+            .reduce((sum, u) => sum + u.total, 0);
+
+        if (limits.min) {
+            if (totalPoints > 0 && categoryPoints < totalPoints * limits.min) {
+                warnings.push(`${category} must be at least ${limits.min * 100}%`);
+            }
+        }
+
+        if (limits.max) {
+            if (categoryPoints > totalPoints * limits.max) {
+                warnings.push(`${category} exceeds ${limits.max * 100}%`);
+            }
+        }
+    });
+
+    return warnings;
+}
+
 
 loadAllData();
