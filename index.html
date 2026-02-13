@@ -17,12 +17,24 @@
     
 <h2>Army Settings</h2>
 
-<label>Target Army Size:
-    <input type="number" id="armySizeInput" value="2000" min="1">
+<label>Army Size:
+    <select id="armySizeSelect">
+        <option value="1000">1000 pts</option>
+        <option value="1500">1500 pts</option>
+        <option value="2000" selected>2000 pts</option>
+        <option value="2500">2500 pts</option>
+        <option value="3000">3000 pts</option>
+        <option value="custom">Custom</option>
+    </select>
 </label>
+
+<input type="number" id="customArmySize" value="2000" min="1" style="display:none; width:100px;">
 
 <p>Remaining Points: <span id="remainingPoints">2000</span></p>
 <hr>
+
+<div id="warnings"></div>
+
 
 <div id="categories"></div>
 
