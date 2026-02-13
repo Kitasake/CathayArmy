@@ -1,0 +1,229 @@
+{
+  "category": "Rare",
+  "units": [
+
+    {
+      "name": "Longma Riders",
+      "points": 48,
+      "unitSize": "3+",
+      "troopType": "Cavalry (Human)",
+      "mount": "Longma (Draconic-Equine)",
+      "baseSize": ["25x50", "30x60", "40x40", "40x60"],
+      "profiles": [
+        {
+          "name": "Longma Rider",
+          "M": 4, "WS": 5, "BS": 4, "S": 4, "T": 4, "W": 1, "I": 5, "A": 2, "Ld": 8
+        },
+        {
+          "name": "Longma",
+          "M": 8, "WS": 3, "BS": 0, "S": 4, "T": 4, "W": 2, "I": 4, "A": 2, "Ld": 6
+        }
+      ],
+      "equipment": ["Light lance", "Medium armour", "Shield"],
+      "specialRules": [
+        "Celestial Forged Armour",
+        "Fear",
+        "Fly (9)",
+        "Impale",
+        "Natural Armour (6+)",
+        "Stubborn",
+        "Will of the Dragons",
+        "Yang"
+      ],
+      "options": [
+        "Replace light lances & shields with polearms (free)",
+        "Heavy armour (+4 points/model)",
+        "Barding (+2 points/model)",
+        "Upgrade one to Leader (+5 points)",
+        "Upgrade one to Musician (+5 points)",
+        "Upgrade one to Standard Bearer (+10 points)",
+        "Magic Standard worth up to 50 points"
+      ]
+    },
+
+    {
+      "name": "Grand Cannon",
+      "points": 150,
+      "troopType": "War Machine",
+      "crew": "3 Crew (Human)",
+      "baseSize": {
+        "cannon": ["50x75", "60x100"],
+        "crew": ["20x20", "25x25"],
+        "ogreLoader": ["40x40"]
+      },
+      "profiles": [
+        {
+          "name": "Grand Cannon",
+          "M": "-", "WS": "-", "BS": "-", "S": "-", "T": 7, "W": "-", "I": "-", "A": "-", "Ld": "-"
+        },
+        {
+          "name": "Crew",
+          "M": 4, "WS": 3, "BS": 3, "S": 3, "T": 3, "W": 1, "I": 3, "A": 1, "Ld": 7
+        },
+        {
+          "name": "Ogre Loader",
+          "M": 6, "WS": 3, "BS": 3, "S": 4, "T": 4, "W": 3, "I": 2, "A": 3, "Ld": 7
+        }
+      ],
+      "equipment": ["Hand weapon", "Great cannon"],
+      "specialRules": [
+        "Will of the Dragons",
+        "Yin",
+        "Flaming Ammunition",
+        "Thunderous Impact"
+      ],
+      "options": [
+        "Ogre Loader (+20 points)",
+        "Light armour (+1 point/Crew)",
+        "Medium armour (+2 points/Crew)"
+      ]
+    },
+
+    {
+      "name": "Fire Rain Rocket",
+      "points": 100,
+      "troopType": "War Machine",
+      "crew": "3 Crew (Human)",
+      "baseSize": {
+        "machine": ["50x75", "60x100"],
+        "crew": ["20x20", "25x25"],
+        "ogreLoader": ["40x40"]
+      },
+      "profiles": [
+        {
+          "name": "Fire Rain Rocket",
+          "M": "-", "WS": "-", "BS": "-", "S": "-", "T": 7, "W": "-", "I": "-", "A": "-", "Ld": "-"
+        },
+        {
+          "name": "Crew",
+          "M": 4, "WS": 3, "BS": 3, "S": 3, "T": 3, "W": 1, "I": 3, "A": 1, "Ld": 7
+        },
+        {
+          "name": "Ogre Loader",
+          "M": 6, "WS": 3, "BS": 3, "S": 4, "T": 4, "W": 3, "I": 2, "A": 3, "Ld": 7
+        }
+      ],
+      "equipment": ["Hand weapon", "Fire rain rockets", "Bastion rocket"],
+      "specialRules": ["Will of the Dragons", "Yin"],
+      "options": [
+        "Ogre Loader (+20 points)",
+        "Light armour (+1 point/Crew)",
+        "Medium armour (+2 points/Crew)"
+      ]
+    },
+
+    {
+      "name": "Zhangu War Drum",
+      "points": 120,
+      "troopType": "Chariot (Armour Save 6+, Human)",
+      "crew": "2 Crew (Human)",
+      "drawnBy": "2 Warhorses (Animal)",
+      "baseSize": "50x100",
+      "equipment": ["Hand weapon", "Light armour"],
+      "specialRules": [
+        "Will of the Dragons",
+        "Yang",
+        "Icon of the Great Cities",
+        "War Drum"
+      ]
+    },
+
+    {
+      "name": "Wu Xing War Compass",
+      "points": 125,
+      "troopType": "Chariot (Armour save 6+)",
+      "crew": "1 Apprentice Astromancer (Human)",
+      "drawnBy": "4 Warhorses (Animal)",
+      "baseSize": "50x100",
+      "equipment": ["Hand weapon"],
+      "specialRules": [
+        "Will of the Dragons",
+        "Yang",
+        "Nexus of Elemental Winds"
+      ]
+    },
+
+    {
+      "name": "Sky-junk",
+      "points": 150,
+      "troopType": "Chariot (Armour Save 4+, Human)",
+      "crew": "5 Crew (Human)",
+      "baseSize": "100x150",
+      "equipment": ["Hand weapon", "Crane guns", "Rocket salvo", "Light armour"],
+      "specialRules": [
+        "Fly (6)",
+        "Heavenly Beacon",
+        "Sky Bombs",
+        "Will of the Dragons",
+        "Yin"
+      ],
+      "options": [
+        "Replace crane guns with blunderbusses & gunpowder bombs (free)"
+      ],
+      "notes": [
+        "Line of Sight value of 10"
+      ]
+    },
+
+    {
+      "name": "Celestial Lion",
+      "points": 125,
+      "troopType": "Monstrous Creature (Feline-avian)",
+      "baseSize": ["50x50", "50x75"],
+      "profile": {
+        "M": 6, "WS": 5, "BS": 0, "S": 5, "T": 5, "W": 4, "I": 5, "A": 4, "Ld": 7
+      },
+      "specialRules": ["Fly (8)", "Yang"]
+    },
+
+    {
+      "name": "Great Moon Bird",
+      "points": 130,
+      "troopType": "Monstrous Creature (Avian)",
+      "baseSize": ["50x50", "50x75"],
+      "profile": {
+        "M": 2, "WS": 4, "BS": 0, "S": 5, "T": 5, "W": 4, "I": 5, "A": 3, "Ld": 7
+      },
+      "specialRules": ["Fly (9)", "Yin", "Moon Flare"]
+    },
+
+    {
+      "name": "Terracotta Sentinel",
+      "points": 220,
+      "troopType": "Monster (Animated Construct)",
+      "baseSize": ["50x75", "60x100", "100x150"],
+      "equipment": ["Polearm", "Heavy armour"],
+      "specialRules": [
+        "Animated Construct",
+        "Regeneration (6+)",
+        "Unstable",
+        "Yang"
+      ],
+      "options": [
+        "Jade Sentinel (+10 points)",
+        "Obsidian Sentinel (+20 points)",
+        "Warpstone Sentinel (+20 points)",
+        "Granite Sentinel (+25 points)"
+      ]
+    },
+
+    {
+      "name": "Guardian Lion",
+      "points": 200,
+      "troopType": "Monster (Animated Construct)",
+      "baseSize": "50x100",
+      "profile": {
+        "M": 7, "WS": 4, "BS": 0, "S": 5, "T": 6, "W": 5, "I": 2, "A": 4, "Ld": 10
+      },
+      "specialRules": [
+        "Animated Construct",
+        "Impact Hits (D6)",
+        "Unstable"
+      ],
+      "notes": [
+        "Each Guardian Lion must either be a Jade Lion or Jet Lion"
+      ]
+    }
+
+  ]
+}
