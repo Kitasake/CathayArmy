@@ -530,5 +530,18 @@ document.getElementById("exportTextBtn").addEventListener("click", () => {
     URL.revokeObjectURL(url);
 });
 
+document.getElementById("exportPdfBtn").addEventListener("click", () => {
+
+    const { jsPDF } = window.jspdf;
+    const doc = new jsPDF();
+
+    const text = generateArmyText();
+
+    const lines = doc.splitTextToSize(text, 180);
+    doc.text(lines, 10, 10);
+
+    doc.save(`grand_cathay_${targetArmySize}pts.pdf`);
+});
+
 
 loadAllData();
