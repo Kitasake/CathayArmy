@@ -1,1 +1,283 @@
+{
+  "category": "Core",
+  "units": [
+
+    {
+      "name": "Peasant Militia",
+      "profile": {
+        "name": "Peasant Militiaman",
+        "M": 4, "WS": 2, "BS": 3, "S": 3, "T": 3,
+        "W": 1, "I": 3, "A": 1, "Ld": 6,
+        "Points": 2
+      },
+      "unitSize": "20+",
+      "troopType": "Infantry (Human)",
+      "baseSize": "20x20 or 25x25",
+      "equipment": ["Hand weapon"],
+      "specialRules": ["Expendable", "Will of the Dragons", "Yang"],
+      "options": [
+        {
+          "May choose one of the following": [
+            { "Spears": "+0.5 point/model" },
+            { "Pikes": "+2 points/model" },
+            { "Polearms": "+2 points/model" }
+          ]
+        },
+        { "Light armour": "+0.5 point/model" },
+        { "Shields (unless armed with pikes)": "+1 point/model" },
+        { "Upgrade one Peasant Militiaman to a Leader": "+5 points" },
+        { "Upgrade one Peasant Militiaman to a Musician": "+5 points" },
+        { "Upgrade one Peasant Militiaman to a Standard Bearer": "+10 points" }
+      ]
+    },
+
+    {
+      "name": "Peasant Archers",
+      "profile": {
+        "name": "Peasant Archer",
+        "M": 4, "WS": 2, "BS": 3, "S": 3, "T": 3,
+        "W": 1, "I": 3, "A": 1, "Ld": 6,
+        "Points": 5
+      },
+      "unitSize": "10+",
+      "troopType": "Infantry (Human)",
+      "baseSize": "20x20 or 25x25",
+      "equipment": ["Hand weapon", "bow"],
+      "specialRules": ["Expendable", "Will of the Dragons", "Yin"],
+      "options": [
+        {
+          "May replace bows with one of the following": [
+            { "Repeater crossbows": "+1 point/model" },
+            { "Crossbows": "+2 points/model" }
+          ]
+        },
+        { "Light armour": "+0.5 point/model" },
+        { "Upgrade one Peasant Archer to a Leader": "+5 points" },
+        { "Upgrade one Peasant Archer to a Musician": "+5 points" },
+        { "Upgrade one Peasant Archer to a Standard Bearer": "+10 points" }
+      ]
+    },
+
+    {
+      "name": "Peasant Horsemen",
+      "profile": {
+        "name": "Peasant Horseman",
+        "M": 4, "WS": 2, "BS": 3, "S": 3, "T": 3,
+        "W": 1, "I": 3, "A": 1, "Ld": 6,
+        "Points": 9
+      },
+      "mountProfile": {
+        "name": "Warhorse",
+        "M": 8, "WS": 3, "BS": 0, "S": 3, "T": 3,
+        "W": 1, "I": 3, "A": 1, "Ld": 5
+      },
+      "unitSize": "5+",
+      "troopType": "Cavalry (Human)",
+      "mount": "Warhorse (Equine)",
+      "baseSize": "25x50",
+      "equipment": ["Hand weapon"],
+      "specialRules": ["Expendable", "Fast Cavalry", "Will of the Dragons", "Yin/Yang"],
+      "options": [
+        {
+          "May choose one of the following": [
+            { "Light lances": "+1 point/model" },
+            { "Shortbows": "+1 point/model" },
+            { "Crossbows": "+2 points/model" },
+            { "Javelins": "+2 points/model" }
+          ]
+        },
+        { "Shields (unless armed with shortbows or crossbows)": "+0.5 point/model" },
+        { "Light armour": "+1 point/model" },
+        { "Upgrade one Peasant Horseman to a Leader": "+5 points" },
+        { "Upgrade one Peasant Horseman to a Musician": "+5 points" },
+        { "Upgrade one Peasant Horseman to a Standard Bearer": "+10 points" }
+      ]
+    },
+
+    {
+      "name": "Jade Warriors",
+      "profile": {
+        "name": "Jade Warrior",
+        "M": 4, "WS": 3, "BS": 3, "S": 3, "T": 3,
+        "W": 1, "I": 3, "A": 1, "Ld": 7,
+        "Points": 3.5
+      },
+      "unitSize": "15+",
+      "troopType": "Infantry (Human)",
+      "baseSize": "20x20 or 25x25",
+      "equipment": ["Hand weapon", "light armour"],
+      "specialRules": ["Will of the Dragons", "Yang"],
+      "options": [
+        {
+          "May choose one of the following": [
+            { "Spears": "+0.5 point/model" },
+            { "Pikes": "+2 points/model" },
+            { "Polearms": "+2 points/model" }
+          ]
+        },
+        { "Medium armour": "+1 point/model" },
+        { "Shields (unless they have pikes)": "+1 point/model" },
+        { "Upgrade one Jade Warrior to a Leader": "+5 points" },
+        { "Upgrade one Jade Warrior to a Musician": "+5 points" },
+        { "Upgrade one Jade Warrior to a Standard Bearer": "+10 points" },
+        { "May take a Magic Standard worth up to": "25 points" }
+      ]
+    },
+
+    {
+      "name": "Jade Bowmen",
+      "profile": {
+        "name": "Jade Bowman",
+        "M": 4, "WS": 3, "BS": 3, "S": 3, "T": 3,
+        "W": 1, "I": 3, "A": 1, "Ld": 7,
+        "Points": 7
+      },
+      "unitSize": "10+",
+      "troopType": "Infantry (Human)",
+      "baseSize": "20x20 or 25x25",
+      "equipment": ["Hand weapon", "bow", "light armour"],
+      "specialRules": ["Will of the Dragons", "Yin"],
+      "options": [
+        {
+          "May replace bows with one of the following": [
+            { "Repeater crossbows": "+1 point/model" },
+            { "Crossbows": "+2 points/model" }
+          ]
+        },
+        { "Medium armour": "+1 point/model" },
+        { "Upgrade one Jade Bowman to a Leader": "+5 points" },
+        { "Upgrade one Jade Bowman to a Musician": "+5 points" },
+        { "Upgrade one Jade Bowman to a Standard Bearer": "+10 points" },
+        { "May take a Magic Standard worth up to": "25 points" }
+      ]
+    },
+
+    {
+      "name": "Jade Horsemen",
+      "profile": {
+        "name": "Jade Horseman",
+        "M": 4, "WS": 3, "BS": 3, "S": 3, "T": 3,
+        "W": 1, "I": 3, "A": 1, "Ld": 7,
+        "Points": 11
+      },
+      "mountProfile": {
+        "name": "Warhorse",
+        "M": 8, "WS": 3, "BS": 0, "S": 3, "T": 3,
+        "W": 1, "I": 3, "A": 1, "Ld": 5
+      },
+      "unitSize": "5+",
+      "troopType": "Cavalry (Human)",
+      "mount": "Warhorse (Equine)",
+      "baseSize": "25x50",
+      "equipment": ["Hand weapon", "light armour"],
+      "specialRules": ["Fast Cavalry", "Will of the Dragons", "Yin/Yang"],
+      "options": [
+        {
+          "May choose one of the following": [
+            { "Shortbows": "+1 point/model" },
+            { "Crossbows": "+2 points/model" },
+            { "Light lances & shields": "+2 points/model" },
+            { "Flails": "+2 points/model" },
+            { "Polearms": "+2 points/model" },
+            { "Three-eyed guns": "+5 points/model" }
+          ]
+        },
+        { "Medium armour": "+1 point/model" },
+        { "May take barding": "+1 point/model" },
+        { "Upgrade one Jade Horseman to a Leader": "+5 points" },
+        { "Upgrade one Jade Horseman to a Musician": "+5 points" },
+        { "Upgrade one Jade Horseman to a Standard Bearer": "+10 points" },
+        { "May take a Magic Standard worth up to": "25 points" }
+      ]
+    },
+
+    {
+      "name": "Iron Hail Gunners",
+      "profile": {
+        "name": "Iron Hail Gunner",
+        "M": 4, "WS": 3, "BS": 3, "S": 3, "T": 3,
+        "W": 1, "I": 3, "A": 1, "Ld": 7,
+        "Points": 9
+      },
+      "unitSize": "10+",
+      "troopType": "Infantry (Human)",
+      "baseSize": "20x20 or 25x25",
+      "equipment": ["Hand weapon", "blunderbuss", "light armour"],
+      "specialRules": ["Will of the Dragons", "Yin"],
+      "options": [
+        {
+          "May replace blunderbusses with one of the following": [
+            { "Handguns": "free" },
+            { "Three-eyed guns": "+3 points/model" }
+          ]
+        },
+        { "Medium armour": "+1 point/model" },
+        { "Upgrade one Iron Hail Gunner to a Leader": "+5 points" },
+        { "Upgrade one Iron Hail Gunner to a Musician": "+5 points" },
+        { "Upgrade one Iron Hail Gunner to a Standard Bearer": "+10 points" },
+        { "May take a Magic Standard worth up to": "25 points" }
+      ]
+    },
+
+    {
+      "name": "Hill Tribesmen",
+      "profile": {
+        "name": "Hill Tribesman",
+        "M": 4, "WS": 3, "BS": 3, "S": 3, "T": 3,
+        "W": 1, "I": 3, "A": 1, "Ld": 6,
+        "Points": 2.5
+      },
+      "unitSize": "10+",
+      "troopType": "Infantry (Human)",
+      "baseSize": "20x20 or 25x25",
+      "equipment": ["Hand weapon"],
+      "specialRules": ["Expendable"],
+      "options": [
+        {
+          "May be upgraded to one of the following": [
+            { "Ambushers": "+1 point/model" },
+            { "Skirmishers": "+1 point/model" }
+          ]
+        },
+        {
+          "May choose one of the following": [
+            { "Additional hand weapons": "+1 point/model" },
+            { "Spears": "+1 point/model" },
+            { "Javelins": "+2 points/model" },
+            { "Shortbows": "+2 points/model" }
+          ]
+        },
+        { "Shields (unless they have two hand weapon or shortbows)": "+1 point/model" },
+        { "Upgrade one Hill Tribesman to a Leader": "+5 points" },
+        { "Upgrade one Hill Tribesman to a Musician": "+5 points" },
+        { "Upgrade one Hill Tribesman to a Standard Bearer": "+10 points" }
+      ]
+    },
+
+    {
+      "name": "Monkey Warriors",
+      "profile": {
+        "name": "Monkey Warrior",
+        "M": 5, "WS": 3, "BS": 3, "S": 3, "T": 3,
+        "W": 1, "I": 4, "A": 2, "Ld": 6,
+        "Points": 6
+      },
+      "unitSize": "10+",
+      "troopType": "Infantry (Beastman)",
+      "baseSize": "20x20 or 25x25",
+      "equipment": ["Hand weapon"],
+      "specialRules": ["Dodge (6+)", "Expendable", "Forest Strider", "Obstacle Strider", "Skirmishers"],
+      "options": [
+        {
+          "May choose one of the following": [
+            { "Additional hand weapons": "+1 point/model" },
+            { "Blowpipes": "+3 points/model" }
+          ]
+        },
+        { "Upgrade one Monkey Warrior to a Leader": "+5 points" }
+      ]
+    }
+
+  ]
+}
 
