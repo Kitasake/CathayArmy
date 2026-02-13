@@ -1,9 +1,6 @@
 {
   "category": "Magic Items",
-  "sections": [
-
-    {
-      "name": "Magic Weapons",
+  
       "items": [
         {
           "name": "Sword of Nan-Gau",
@@ -24,14 +21,9 @@
           "name": "Wrath of Xen Yang",
           "cost": 10,
           "description": "Light lance/spear. The wielder of this weapon gains the Flaming Attacks special rule."
-        }
-      ]
-    },
+        },
 
     {
-      "name": "Magic Armour",
-      "items": [
-        {
           "name": "Jade Armour of Beichai",
           "cost": 60,
           "description": "Heavy armour. The wearer of this armour gains a 5+ Ward save and the Magic Resistance (2) special rule."
@@ -70,13 +62,9 @@
           "name": "Shield of Nan-Gau",
           "cost": 10,
           "description": "Shield. The bearer gains +2 armour save against all attacks to their front in the first round of close combat."
-        }
-      ]
-    },
+        },
 
-    {
-      "name": "Talismans",
-      "items": [
+  
         {
           "name": "Guardian Feng Shi Bo",
           "cost": 40,
@@ -121,13 +109,8 @@
           "name": "Sigil of Smoke & Powder",
           "cost": 25,
           "description": "All missile attacks targeting the bearer of this item or any unit they are with suffer -1 To Hit."
-        }
-      ]
-    },
-
-    {
-      "name": "Arcane Items",
-      "items": [
+        },
+     
         {
           "name": "Cloak of Po Mei",
           "cost": 40,
@@ -171,5 +154,5 @@
       ]
     }
 
-  ]
-}
+  
+
