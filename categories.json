@@ -1,0 +1,9 @@
+{
+  "categories": [
+    { "id": "lords", "name": "Lords" },
+    { "id": "heroes", "name": "Heroes" },
+    { "id": "core", "name": "Core Units" },
+    { "id": "special", "name": "Special Units" },
+    { "id": "rare", "name": "Rare Units" }
+  ]
+}

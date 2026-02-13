@@ -1,0 +1,21 @@
+{
+  "id": "grand_cathay_171",
+  "name": "Grand Cathay",
+  "gameSystem": "Warhammer Fantasy",
+  "version": "1.71",
+  "imports": [
+    "categories/categories.json",
+    "profiles/stat_profiles.json",
+    "rules/army_rules.json",
+    "rules/unit_rules.json",
+    "wargear/mundane_weapons.json",
+    "wargear/armour.json",
+    "wargear/mounts.json",
+    "wargear/magic_items.json",
+    "units/lords.json",
+    "units/heroes.json",
+    "units/core.json",
+    "units/special.json",
+    "units/rare.json"
+  ]
+}
