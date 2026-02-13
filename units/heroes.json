@@ -1,0 +1,35 @@
+{
+  "units": [
+    {
+      "id": "celestial_captain",
+      "name": "Celestial Captain",
+      "category": "heroes",
+      "baseCost": 65,
+      "profile": {
+        "M": 4, "WS": 5, "BS": 5, "S": 4,
+        "T": 4, "W": 2, "I": 5, "A": 3, "Ld": 8
+      },
+      "unitType": "Infantry",
+      "baseSize": ["20x20","25x25"],
+      "defaultWargear": [
+        "hand_weapon",
+        "medium_armour"
+      ],
+      "rules": [
+        "celestial_forged_armour",
+        "will_of_the_dragons",
+        "yin_yang"
+      ],
+      "options": {
+        "battleStandard": {
+          "cost": 25,
+          "modifiers": {
+            "magicBannerLimit": "unlimited",
+            "magicItemsIfBanner": 25
+          }
+        },
+        "magicItemLimit": 50
+      }
+    }
+  ]
+}
