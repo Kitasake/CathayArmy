@@ -18,6 +18,27 @@ const CATEGORY_LIMITS = {
     "Rare": { max: 0.25 }
 };
 
+const armySizeSelect = document.getElementById("armySizeSelect");
+const customArmySizeInput = document.getElementById("customArmySize");
+
+armySizeSelect.addEventListener("change", () => {
+
+    if (armySizeSelect.value === "custom") {
+        customArmySizeInput.style.display = "inline-block";
+        targetArmySize = parseInt(customArmySizeInput.value) || 0;
+    } else {
+        customArmySizeInput.style.display = "none";
+        targetArmySize = parseInt(armySizeSelect.value);
+    }
+
+    updateArmyDisplay();
+});
+
+customArmySizeInput.addEventListener("input", () => {
+    targetArmySize = parseInt(customArmySizeInput.value) || 0;
+    updateArmyDisplay();
+});
+
 
 
 async function loadAllData() {
