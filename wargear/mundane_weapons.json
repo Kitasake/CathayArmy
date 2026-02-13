@@ -1,0 +1,10 @@
+{
+  "wargear": [
+    { "id": "hand_weapon", "name": "Hand Weapon", "type": "weapon", "cost": 0 },
+    { "id": "additional_hand_weapon", "name": "Additional Hand Weapon", "type": "weapon" },
+    { "id": "spear", "name": "Spear", "type": "weapon" },
+    { "id": "light_lance", "name": "Light Lance", "type": "weapon" },
+    { "id": "polearm", "name": "Polearm", "type": "weapon" },
+    { "id": "great_weapon", "name": "Great Weapon", "type": "weapon" }
+  ]
+}
