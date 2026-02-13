@@ -1,0 +1,19 @@
+{
+  "rules": [
+    {
+      "id": "will_of_the_dragons",
+      "name": "Will of the Dragons",
+      "description": "Units benefit from harmony mechanics when aligned."
+    },
+    {
+      "id": "yin",
+      "name": "Yin",
+      "description": "Unit has Yin alignment."
+    },
+    {
+      "id": "yang",
+      "name": "Yang",
+      "description": "Unit has Yang alignment."
+    }
+  ]
+}
