@@ -17,6 +17,14 @@ async function loadAllData() {
     renderCategories(results);
 }
 
+function getMinimumSize(unit) {
+    if (!unit.unitSize) return 1;
+
+    // Extract number from "10+" etc.
+    const match = unit.unitSize.match(/\d+/);
+    return match ? parseInt(match[0]) : 1;
+}
+
 function renderCategories(datasets) {
     const container = document.getElementById("categories");
 
@@ -32,15 +40,26 @@ function renderCategories(datasets) {
             const unitDiv = document.createElement("div");
             unitDiv.className = "unit";
 
+            const minSize = getMinimumSize(unit);
+
             const label = document.createElement("span");
-            label.textContent = `${unit.name} (${unit.profile.points} pts)`;
+            label.textContent = `${unit.name} (${unit.profile.points} pts/model, min ${minSize})`;
+
+            const qtyInput = document.createElement("input");
+            qtyInput.type = "number";
+            qtyInput.min = minSize;
+            qtyInput.value = minSize;
+            qtyInput.style.width = "60px";
+            qtyInput.style.marginLeft = "10px";
 
             const button = document.createElement("button");
             button.textContent = "Add";
-            button.onclick = () => addUnit(unit);
+            button.onclick = () => addUnit(unit, parseInt(qtyInput.value));
 
             unitDiv.appendChild(label);
+            unitDiv.appendChild(qtyInput);
             unitDiv.appendChild(button);
+
             div.appendChild(unitDiv);
         });
 
@@ -48,37 +67,25 @@ function renderCategories(datasets) {
     });
 }
 
-function addUnit(unit) {
-    army.push(unit);
-    totalPoints += unit.profile.points;
+function addUnit(unit, quantity) {
+    const unitTotal = unit.profile.points * quantity;
 
+    army.push({
+        name: unit.name,
+        pointsPerModel: unit.profile.points,
+        quantity: quantity,
+        total: unitTotal
+    });
+
+    totalPoints += unitTotal;
     updateArmyDisplay();
 }
 
 function removeUnit(index) {
-    totalPoints -= army[index].profile.points;
+    totalPoints -= army[index].total;
     army.splice(index, 1);
-
     updateArmyDisplay();
 }
 
 function updateArmyDisplay() {
-    const list = document.getElementById("armyList");
-    list.innerHTML = "";
-
-    army.forEach((unit, index) => {
-        const li = document.createElement("li");
-        li.textContent = `${unit.name} (${unit.profile.points} pts)`;
-
-        const removeBtn = document.createElement("button");
-        removeBtn.textContent = "Remove";
-        removeBtn.onclick = () => removeUnit(index);
-
-        li.appendChild(removeBtn);
-        list.appendChild(li);
-    });
-
-    document.getElementById("totalPoints").textContent = totalPoints;
-}
-
-loadAllData();
+    const list = document.getEle
