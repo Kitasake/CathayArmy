@@ -4,7 +4,8 @@ const dataFiles = [
     "data/grand_cathay/units/core_units.json",
     "data/grand_cathay/units/special_units.json",
     "data/grand_cathay/units/rare_units.json",
-    "data/grand_cathay/wargear/magic_items.json"
+    "data/grand_cathay/wargear/magic_items.json",
+    "data/grand_cathay/wargear/mounts.json"
 
 ];
 
@@ -50,8 +51,11 @@ async function loadAllData() {
 
     const magicItemsData = results.find(d => d.category === "Magic Items");
     const unitData = results.filter(d => d.category !== "Magic Items");
-    
     window.magicItems = magicItemsData ? magicItemsData.items : [];
+    
+    const mountsData = results.find(d => d.mounts);
+    window.mounts = mountsData ? mountsData.mounts : [];
+
     
     renderCategories(unitData);
 
@@ -461,12 +465,6 @@ function validateArmyComposition() {
 
     return warnings;
 }
-
-
-document.getElementById("armySizeInput").addEventListener("input", (e) => {
-    targetArmySize = parseInt(e.target.value) || 0;
-    updateArmyDisplay();
-});
 
 function generateArmyText() {
 
