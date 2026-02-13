@@ -7,22 +7,22 @@
       "items": [
         {
           "name": "Sword of Nan-Gau",
-          "points": 20,
+          "cost": 20,
           "description": "The wielder of this weapon gains the Armour Piercing (3) and Hatred (Chaos) special rules."
         },
         {
           "name": "Vermillion Blade",
-          "points": 20,
+          "cost": 20,
           "description": "The wielder of this weapon gains +1 To Hit and the Flaming Attacks special rule."
         },
         {
           "name": "Sun & Moon Blades",
-          "points": 15,
+          "cost": 15,
           "description": "Two hand weapons. These weapons have the Armour Piercing (1) and Immunity (Killing Blow) special rules."
         },
         {
           "name": "Wrath of Xen Yang",
-          "points": 10,
+          "cost": 10,
           "description": "Light lance/spear. The wielder of this weapon gains the Flaming Attacks special rule."
         }
       ]
@@ -33,42 +33,42 @@
       "items": [
         {
           "name": "Jade Armour of Beichai",
-          "points": 60,
+          "cost": 60,
           "description": "Heavy armour. The wearer of this armour gains a 5+ Ward save and the Magic Resistance (2) special rule."
         },
         {
           "name": "Quicksilver Armour",
-          "points": 30,
+          "cost": 30,
           "description": "Medium armour. The wearer of this armour gains the Always Strikes First special rule."
         },
         {
           "name": "Armour of the Warbird",
-          "points": 25,
+          "cost": 25,
           "description": "Infantry only. Medium armour. The wearer of this armour gains the Fly (10) and Loner special rules."
         },
         {
           "name": "Scales of the Celestial Court",
-          "points": 25,
+          "cost": 25,
           "description": "Medium armour. The wearer of this armour gains the Natural Armour (3+) and Strider special rules."
         },
         {
           "name": "Ascendant Celestial Armour",
-          "points": 15,
+          "cost": 15,
           "description": "Heavy armour. The wearer of this armour is immune to penalties to any of their characteristics and automatically passes all characteristics tests."
         },
         {
           "name": "Laminate Shield",
-          "points": 10,
+          "cost": 10,
           "description": "Shield. Every time the bearer of this shield makes a successful Parry save, they may immediately make an additional Attack back against the model that struck the blow."
         },
         {
           "name": "Mantle of Heaven",
-          "points": 10,
+          "cost": 10,
           "description": "The wearer of this armour gains a 5+ armour save against non-magical missile attacks."
         },
         {
           "name": "Shield of Nan-Gau",
-          "points": 10,
+          "cost": 10,
           "description": "Shield. The bearer gains +2 armour save against all attacks to their front in the first round of close combat."
         }
       ]
@@ -79,47 +79,47 @@
       "items": [
         {
           "name": "Guardian Feng Shi Bo",
-          "points": 40,
+          "cost": 40,
           "description": "All close combat and missile attacks targeting the bearer of this item must re-roll successful To Hit rolls."
         },
         {
           "name": "Robes of Shang Yang",
-          "points": 40,
+          "cost": 40,
           "description": "Bound Spell (power level 3). This item contains the Wall of Wind & Fire spell from the Lore of Yang. In addition, the bearer gain a 6+ Ward save against missile attacks."
         },
         {
           "name": "Crystal of Kunlan",
-          "points": 35,
+          "cost": 35,
           "description": "The bearer of this item gains a 5+ Ward save. In addition, for each successful Ward save they make in close combat, the enemy that struck the blow immediately suffers a Strength 3 Hit with the Flaming Attacks special rule."
         },
         {
           "name": "Celestial Silk Robe",
-          "points": 25,
+          "cost": 25,
           "description": "The wearer of this item gains a 6+ Ward save and the Magical Resistance (1) special rule."
         },
         {
           "name": "Jet Amulet",
-          "points": 25,
+          "cost": 25,
           "description": "The bearer of this item gains the Magic Resistance (2) special rule. In addition, they may re-roll any failed dispel attempts against spells directly targeting them or their unit."
         },
         {
           "name": "Jade Blood Pendant",
-          "points": 20,
+          "cost": 20,
           "description": "Whenever the bearer kills one or more enemy models in close combat, roll a D6 at the end of the Close Combat phase. On the roll of a 5+, the bearer recovers a single Wound lost earlier in the battle."
         },
         {
           "name": "Jar of All Souls",
-          "points": 20,
+          "cost": 20,
           "description": "One use only. If the bearer of this item is killed, immediately roll a D6. On a 2+, they come back to life with 1 Wound remaining."
         },
         {
           "name": "Crown of Jade",
-          "points": 10,
+          "cost": 10,
           "description": "The bearer of this item gains a 4+ Ward save against all enemy spells."
         },
         {
           "name": "Sigil of Smoke & Powder",
-          "points": 25,
+          "cost": 25,
           "description": "All missile attacks targeting the bearer of this item or any unit they are with suffer -1 To Hit."
         }
       ]
@@ -130,42 +130,42 @@
       "items": [
         {
           "name": "Cloak of Po Mei",
-          "points": 40,
+          "cost": 40,
           "description": "The bearer of this item gains a +1 casting and dispelling bonus."
         },
         {
           "name": "Clockwork Compass",
-          "points": 35,
+          "cost": 35,
           "description": "One use only. This item can be used at the start of any of your Magic phases. Once used, all Remains in Play spells within 24\" of the bearer that are currently in play are automatically dispelled, and the effects of all other spells within 24\" of the bearer immediately come to an end."
         },
         {
           "name": "Jade Amulet",
-          "points": 35,
+          "cost": 35,
           "description": "The bearer of this item may re-roll failed channelling attempts."
         },
         {
           "name": "Scrolls of Astromancy",
-          "points": 35,
+          "cost": 35,
           "description": "Astromancer only. The bearer can re-roll all of the dice rolled to cast or dispel a spell once per Magic phase."
         },
         {
           "name": "Staff of Wu Xing",
-          "points": 25,
+          "cost": 25,
           "description": "The bearer of this staff can choose to re-roll all the Winds of Magic dice each Magic phase."
         },
         {
           "name": "Scrolls of Wei-Jin",
-          "points": 20,
+          "cost": 20,
           "description": "The bearer of this item may choose their spells from two different Lores of Magic from those normally available to them."
         },
         {
           "name": "Maw Shard",
-          "points": 15,
+          "cost": 15,
           "description": "One use only. The Maw Shard may be used in any of your Magic phases. Once used, any double (except double 1's) rolled when the bearer casts spells counts towards Ultimate Power this turn."
         },
         {
           "name": "Seal of Xing Po",
-          "points": 5,
+          "cost": 5,
           "description": "Dragon-Blooded Shugengan or Dragon Descendant only. The bearer of this item may choose spells from both the Lore of Yin and Yang in addition to the spells from their other lore."
         }
       ]
