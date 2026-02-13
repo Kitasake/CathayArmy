@@ -1,285 +1,193 @@
 {
+  "category": "Heroes",
   "units": [
 
     {
       "id": "celestial_captain",
       "name": "Celestial Captain",
-      "category": "heroes",
-      "baseCost": 65,
       "profile": {
-        "M": 4,
-        "WS": 5,
-        "BS": 5,
-        "S": 4,
-        "T": 4,
-        "W": 2,
-        "I": 5,
-        "A": 3,
-        "Ld": 8
+        "points": 65
       },
-      "troopType": "Infantry (Character, Human)",
-      "baseSize": ["20x20", "25x25"],
-      "equipment": [
-        "Hand weapon",
-        "Medium armour"
+      "magicItemLimit": 50,
+      "options": [
+        {
+          "name": "Battle Standard",
+          "cost": 25
+        },
+        {
+          "group": "Melee Weapon",
+          "choices": [
+            { "name": "Additional hand weapon", "cost": 2 },
+            { "name": "Celestial blade", "cost": 2 },
+            { "name": "Spear", "cost": 2 },
+            { "name": "Light lance", "cost": 3 },
+            { "name": "Polearm", "cost": 6 },
+            { "name": "Great weapon", "cost": 9 }
+          ]
+        },
+        {
+          "group": "Ranged Weapon",
+          "choices": [
+            { "name": "Bow", "cost": 5 },
+            { "name": "Crossbow", "cost": 7 },
+            { "name": "Repeater crossbow", "cost": 6 },
+            { "name": "Handgun", "cost": 7 },
+            { "name": "Dragon fire pistol", "cost": 9 }
+          ]
+        },
+        {
+          "group": "Armour",
+          "choices": [
+            { "name": "Heavy armour", "cost": 6 },
+            { "name": "Shield", "cost": 2 }
+          ]
+        }
       ],
-      "specialRules": [
-        "Celestial Forged Armour",
-        "Will of the Dragons",
-        "Yin/Yang"
-      ],
-      "options": {
-        "battleStandard": 25,
-        "chooseOneMelee": [
-          { "name": "Additional hand weapon", "cost": 2 },
-          { "name": "Celestial blade", "cost": 2 },
-          { "name": "Spear", "cost": 2 },
-          { "name": "Light lance", "cost": 3 },
-          { "name": "Polearm", "cost": 6 },
-          { "name": "Great weapon", "cost": 9 }
-        ],
-        "chooseOneRanged": [
-          { "name": "Bow", "cost": 5 },
-          { "name": "Crossbow", "cost": 7 },
-          { "name": "Repeater crossbow", "cost": 6 },
-          { "name": "Handgun", "cost": 7 },
-          { "name": "Dragon fire pistol", "cost": 9 }
-        ],
-        "armourUpgrades": [
-          { "name": "Heavy armour", "cost": 6 },
-          { "name": "Shield", "cost": 2 }
-        ],
-        "mountOptions": [
-          { "name": "Warhorse", "cost": 12 },
-          { "name": "Jade Longma", "cost": 32 },
-          { "name": "War Chariot (replacing one of the crew)", "cost": 70 }
-        ],
-        "magicItemsLimit": 50
-      },
-      "notes": [
-        "Battle Standard: The Battle Standard Bearer can have a magic banner with no points limit. However, a model carrying a magic standard can only carry other magic items up to a total of 25 points."
+      "mounts": [
+        { "name": "Warhorse", "cost": 12 },
+        { "name": "Jade Longma", "cost": 32 },
+        { "name": "War Chariot (replacing one of the crew)", "cost": 70 }
       ]
     },
 
     {
       "id": "gate_master",
       "name": "Gate Master",
-      "category": "heroes",
-      "baseCost": 45,
       "profile": {
-        "M": 4,
-        "WS": 4,
-        "BS": 4,
-        "S": 4,
-        "T": 4,
-        "W": 2,
-        "I": 4,
-        "A": 2,
-        "Ld": 8
+        "points": 45
       },
-      "troopType": "Infantry (Character, Human)",
-      "baseSize": ["20x20", "25x25"],
-      "equipment": [
-        "Hand weapon",
-        "Medium armour"
+      "magicItemLimit": 50,
+      "options": [
+        {
+          "name": "Battle Standard",
+          "cost": 25
+        },
+        {
+          "group": "Melee Weapon",
+          "choices": [
+            { "name": "Additional hand weapon", "cost": 2 },
+            { "name": "Celestial blade", "cost": 2 },
+            { "name": "Spear", "cost": 2 },
+            { "name": "Light lance", "cost": 2 },
+            { "name": "Polearm", "cost": 4 },
+            { "name": "Great weapon", "cost": 6 }
+          ]
+        },
+        {
+          "group": "Ranged Weapon",
+          "choices": [
+            { "name": "Bow", "cost": 4 },
+            { "name": "Repeater crossbow", "cost": 5 },
+            { "name": "Crossbow", "cost": 6 },
+            { "name": "Handgun", "cost": 6 }
+          ]
+        },
+        {
+          "group": "Armour",
+          "choices": [
+            { "name": "Shield", "cost": 2 }
+          ]
+        }
       ],
-      "specialRules": [
-        "Will of the Dragons",
-        "Yin/Yang",
-        "Bastion's Defenders",
-        "Harmony of Stone & Steel"
-      ],
-      "options": {
-        "battleStandard": 25,
-        "chooseOneMelee": [
-          { "name": "Additional hand weapon", "cost": 2 },
-          { "name": "Celestial blade", "cost": 2 },
-          { "name": "Spear", "cost": 2 },
-          { "name": "Light lance", "cost": 2 },
-          { "name": "Polearm", "cost": 4 },
-          { "name": "Great weapon", "cost": 6 }
-        ],
-        "chooseOneRanged": [
-          { "name": "Bow", "cost": 4 },
-          { "name": "Repeater crossbow", "cost": 5 },
-          { "name": "Crossbow", "cost": 6 },
-          { "name": "Handgun", "cost": 6 }
-        ],
-        "armourUpgrades": [
-          { "name": "Shield", "cost": 2 }
-        ],
-        "mountOptions": [
-          { "name": "Warhorse", "cost": 12 }
-        ],
-        "magicItemsLimit": 50
-      }
+      "mounts": [
+        { "name": "Warhorse", "cost": 12 }
+      ]
     },
 
     {
       "id": "alchemist",
       "name": "Alchemist",
-      "category": "heroes",
-      "baseCost": 65,
       "profile": {
-        "M": 4,
-        "WS": 3,
-        "BS": 3,
-        "S": 3,
-        "T": 3,
-        "W": 2,
-        "I": 3,
-        "A": 1,
-        "Ld": 7
+        "points": 65
       },
-      "troopType": "Infantry (Character, Human)",
-      "baseSize": ["20x20", "25x25"],
-      "equipment": [
-        "Hand weapon"
+      "magicItemLimit": 50,
+      "options": [
+        {
+          "name": "Upgrade to Wizard Level 2",
+          "cost": 35
+        },
+        {
+          "group": "Additional Equipment",
+          "choices": [
+            { "name": "Light armour", "cost": 2 }
+          ]
+        }
       ],
-      "magic": {
-        "level": 1,
-        "lore": "Lore of Metal"
-      },
-      "specialRules": [
-        "Will of the Dragons",
-        "Yin"
-      ],
-      "options": {
-        "upgradeWizardLevel2": 35,
-        "additionalEquipment": [
-          { "name": "Light armour", "cost": 2 }
-        ],
-        "mountOptions": [
-          { "name": "Warhorse", "cost": 12 }
-        ],
-        "magicItemsLimit": 50
-      }
+      "mounts": [
+        { "name": "Warhorse", "cost": 12 }
+      ]
     },
 
     {
       "id": "astromancer",
       "name": "Astromancer",
-      "category": "heroes",
-      "baseCost": 65,
       "profile": {
-        "M": 4,
-        "WS": 3,
-        "BS": 3,
-        "S": 3,
-        "T": 3,
-        "W": 2,
-        "I": 3,
-        "A": 1,
-        "Ld": 7
+        "points": 65
       },
-      "troopType": "Infantry (Character, Human)",
-      "baseSize": ["20x20", "25x25"],
-      "equipment": [
-        "Hand weapon"
+      "magicItemLimit": 50,
+      "options": [
+        {
+          "name": "Upgrade to Wizard Level 2",
+          "cost": 35
+        },
+        {
+          "group": "Additional Equipment",
+          "choices": [
+            { "name": "Light armour", "cost": 2 }
+          ]
+        }
       ],
-      "magic": {
-        "level": 1,
-        "lore": "Lore of Heavens"
-      },
-      "specialRules": [
-        "Will of the Dragons",
-        "Yang"
-      ],
-      "options": {
-        "upgradeWizardLevel2": 35,
-        "additionalEquipment": [
-          { "name": "Light armour", "cost": 2 }
-        ],
-        "mountOptions": [
-          { "name": "Warhorse", "cost": 12 },
-          { "name": "Wu Xing War Compass (replacing the Apprentice Astromancer)", "cost": 120 }
-        ],
-        "magicItemsLimit": 50
-      }
+      "mounts": [
+        { "name": "Warhorse", "cost": 12 },
+        { "name": "Wu Xing War Compass (replacing the Apprentice Astromancer)", "cost": 120 }
+      ]
     },
 
     {
       "id": "magistrate",
       "name": "Magistrate",
-      "category": "heroes",
-      "baseCost": 50,
       "profile": {
-        "M": 4,
-        "WS": 3,
-        "BS": 3,
-        "S": 3,
-        "T": 3,
-        "W": 2,
-        "I": 3,
-        "A": 1,
-        "Ld": 8
+        "points": 50
       },
-      "troopType": "Infantry (Character, Human)",
-      "baseSize": ["20x20", "25x25"],
-      "equipment": [
-        "Hand weapon"
+      "magicItemLimit": 50,
+      "options": [
+        {
+          "group": "Additional Equipment",
+          "choices": [
+            { "name": "Dragon fire bombs", "cost": 9 },
+            { "name": "Light armour", "cost": 2 }
+          ]
+        }
       ],
-      "specialRules": [
-        "Inspiring Presence (6)",
-        "Tactician (see Lord Magistrate)",
-        "Will of the Dragons",
-        "Yin/Yang"
-      ],
-      "options": {
-        "additionalEquipment": [
-          { "name": "Dragon fire bombs", "cost": 9 },
-          { "name": "Light armour", "cost": 2 }
-        ],
-        "mountOptions": [
-          { "name": "Warhorse", "cost": 12 },
-          { "name": "Sky Lantern (replacing one of the crew)", "cost": 85 }
-        ],
-        "magicItemsLimit": 50
-      }
+      "mounts": [
+        { "name": "Warhorse", "cost": 12 },
+        { "name": "Sky Lantern (replacing one of the crew)", "cost": 85 }
+      ]
     },
 
     {
       "id": "blademaster",
       "name": "Blademaster",
-      "category": "heroes",
-      "baseCost": 120,
       "profile": {
-        "M": 4,
-        "WS": 6,
-        "BS": 5,
-        "S": 4,
-        "T": 4,
-        "W": 2,
-        "I": 6,
-        "A": 3,
-        "Ld": 8
+        "points": 120
       },
-      "troopType": "Infantry (Character, Human)",
-      "baseSize": ["20x20", "25x25"],
-      "equipment": [
-        "Hand weapon"
-      ],
-      "specialRules": [
-        "Dodge (5+)",
-        "Killing Blow",
-        "Will of the Dragons",
-        "Yang",
-        "Duellist"
-      ],
-      "options": {
-        "chooseOneMelee": [
-          { "name": "Additional hand weapon", "cost": 2 },
-          { "name": "Spear", "cost": 3 },
-          { "name": "Polearm", "cost": 6 },
-          { "name": "Great weapon", "cost": 9 }
-        ],
-        "additionalEquipment": [
-          { "name": "Light armour", "cost": 2 }
-        ],
-        "magicItemsLimit": 50
-      },
-      "notes": [
-        "A Blademaster may never be the Army General."
+      "magicItemLimit": 50,
+      "options": [
+        {
+          "group": "Melee Weapon",
+          "choices": [
+            { "name": "Additional hand weapon", "cost": 2 },
+            { "name": "Spear", "cost": 3 },
+            { "name": "Polearm", "cost": 6 },
+            { "name": "Great weapon", "cost": 9 }
+          ]
+        },
+        {
+          "group": "Additional Equipment",
+          "choices": [
+            { "name": "Light armour", "cost": 2 }
+          ]
+        }
       ]
     }
 
