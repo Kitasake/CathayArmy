@@ -388,11 +388,12 @@ function updateArmyDisplay() {
         li.appendChild(removeBtn);
         list.appendChild(li);
 
-        document.getElementById("remainingPoints").textContent =
-        targetArmySize - totalPoints;
+        
     });
 
     document.getElementById("totalPoints").textContent = totalPoints;
+    document.getElementById("remainingPoints").textContent =
+        targetArmySize - totalPoints;
     const warnings = validateArmyComposition();
 
     const warningDiv = document.getElementById("warnings");
