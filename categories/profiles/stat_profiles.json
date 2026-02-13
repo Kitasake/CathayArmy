@@ -1,0 +1,11 @@
+{
+  "profiles": [
+    {
+      "id": "warhammer_statline",
+      "name": "Warhammer Statline",
+      "characteristics": [
+        "M","WS","BS","S","T","W","I","A","Ld"
+      ]
+    }
+  ]
+}
