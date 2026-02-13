@@ -9,6 +9,15 @@ const dataFiles = [
 let army = [];
 let totalPoints = 0;
 
+const CATEGORY_LIMITS = {
+    "Lords": { max: 0.25 },
+    "Heroes": { max: 0.50 },
+    "Core": { min: 0.25 },
+    "Special": { max: 0.50 },
+    "Rare": { max: 0.25 }
+};
+
+
 async function loadAllData() {
     const results = await Promise.all(
         dataFiles.map(file => fetch(file).then(res => res.json()))
@@ -19,10 +28,23 @@ async function loadAllData() {
 
 function getMinimumSize(unit) {
     if (!unit.unitSize) return 1;
-
-    // Extract number from "10+" etc.
     const match = unit.unitSize.match(/\d+/);
     return match ? parseInt(match[0]) : 1;
+}
+
+function parseCost(costString, quantity) {
+    if (!costString) return 0;
+
+    const numberMatch = costString.match(/[\d.]+/);
+    if (!numberMatch) return 0;
+
+    const value = parseFloat(numberMatch[0]);
+
+    if (costString.includes("per model")) {
+        return value * quantity;
+    }
+
+    return value;
 }
 
 function renderCategories(datasets) {
@@ -42,22 +64,70 @@ function renderCategories(datasets) {
 
             const minSize = getMinimumSize(unit);
 
-            const label = document.createElement("span");
-            label.textContent = `${unit.name} (${unit.profile.points} pts/model, min ${minSize})`;
+            const label = document.createElement("div");
+            label.innerHTML = `<strong>${unit.name}</strong> (${unit.profile.points} pts/model, min ${minSize})`;
 
             const qtyInput = document.createElement("input");
             qtyInput.type = "number";
             qtyInput.min = minSize;
             qtyInput.value = minSize;
             qtyInput.style.width = "60px";
-            qtyInput.style.marginLeft = "10px";
+
+            const upgradesContainer = document.createElement("div");
+            upgradesContainer.style.marginLeft = "20px";
+
+            if (unit.options) {
+                unit.options.forEach(option => {
+
+                    // OPTION GROUP (radio buttons)
+                    if (option.group && option.choices) {
+                        const groupDiv = document.createElement("div");
+                        groupDiv.innerHTML = `<em>${option.group}</em>`;
+
+                        option.choices.forEach(choice => {
+                            const radio = document.createElement("input");
+                            radio.type = "radio";
+                            radio.name = `${unit.name}_${option.group}`;
+                            radio.value = choice.name;
+                            radio.dataset.cost = choice.cost;
+
+                            const label = document.createElement("label");
+                            label.textContent = ` ${choice.name} (${choice.cost})`;
+
+                            groupDiv.appendChild(document.createElement("br"));
+                            groupDiv.appendChild(radio);
+                            groupDiv.appendChild(label);
+                        });
+
+                        upgradesContainer.appendChild(groupDiv);
+                    }
+
+                    // SINGLE CHECKBOX OPTION
+                    else if (option.name) {
+                        const checkbox = document.createElement("input");
+                        checkbox.type = "checkbox";
+                        checkbox.value = option.name;
+                        checkbox.dataset.cost = option.cost;
+
+                        const label = document.createElement("label");
+                        label.textContent = ` ${option.name} (${option.cost})`;
+
+                        upgradesContainer.appendChild(document.createElement("br"));
+                        upgradesContainer.appendChild(checkbox);
+                        upgradesContainer.appendChild(label);
+                    }
+                });
+            }
 
             const button = document.createElement("button");
             button.textContent = "Add";
-            button.onclick = () => addUnit(unit, parseInt(qtyInput.value));
+            button.onclick = () =>
+                addUnit(unit, parseInt(qtyInput.value), upgradesContainer);
 
             unitDiv.appendChild(label);
             unitDiv.appendChild(qtyInput);
+            unitDiv.appendChild(upgradesContainer);
+            unitDiv.appendChild(document.createElement("br"));
             unitDiv.appendChild(button);
 
             div.appendChild(unitDiv);
@@ -67,19 +137,51 @@ function renderCategories(datasets) {
     });
 }
 
-function addUnit(unit, quantity) {
-    const unitTotal = unit.profile.points * quantity;
+function addUnit(unit, quantity, upgradesContainer, category) {
+    let basePoints = unit.profile.points * quantity;
+    let upgrades = [];
+    let upgradePoints = 0;
+
+    const inputs = upgradesContainer.querySelectorAll("input");
+
+    inputs.forEach(input => {
+        if ((input.type === "checkbox" && input.checked) ||
+            (input.type === "radio" && input.checked)) {
+
+            const cost = parseCost(input.dataset.cost, quantity);
+
+            upgrades.push({
+                name: input.value,
+                cost: cost
+            });
+
+            upgradePoints += cost;
+        }
+    });
+
+    const total = basePoints + upgradePoints;
+
+    // Simulate new total before adding
+    const simulatedTotal = totalPoints + total;
+
+    if (!validateCategoryLimit(category, total, simulatedTotal)) {
+        alert(`Cannot add ${unit.name}. Category limit exceeded.`);
+        return;
+    }
 
     army.push({
         name: unit.name,
-        pointsPerModel: unit.profile.points,
         quantity: quantity,
-        total: unitTotal
+        basePoints: basePoints,
+        upgrades: upgrades,
+        total: total,
+        category: category
     });
 
-    totalPoints += unitTotal;
+    totalPoints += total;
     updateArmyDisplay();
 }
+
 
 function removeUnit(index) {
     totalPoints -= army[index].total;
@@ -88,4 +190,33 @@ function removeUnit(index) {
 }
 
 function updateArmyDisplay() {
-    const list = document.getEle
+    const list = document.getElementById("armyList");
+    list.innerHTML = "";
+
+    army.forEach((unit, index) => {
+        const li = document.createElement("li");
+
+        li.innerHTML = `<strong>${unit.quantity}x ${unit.name}</strong> (${unit.total} pts)`;
+
+        if (unit.upgrades.length > 0) {
+            const ul = document.createElement("ul");
+            unit.upgrades.forEach(upg => {
+                const sub = document.createElement("li");
+                sub.textContent = `${upg.name} (+${upg.cost} pts)`;
+                ul.appendChild(sub);
+            });
+            li.appendChild(ul);
+        }
+
+        const removeBtn = document.createElement("button");
+        removeBtn.textContent = "Remove";
+        removeBtn.onclick = () => removeUnit(index);
+
+        li.appendChild(removeBtn);
+        list.appendChild(li);
+    });
+
+    document.getElementById("totalPoints").textContent = totalPoints;
+}
+
+loadAllData();
