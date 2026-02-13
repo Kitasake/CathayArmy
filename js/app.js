@@ -3,7 +3,7 @@ const dataFiles = [
     "data/grand_cathay/units/heroes.json",
     "data/grand_cathay/units/core_units.json",
     "data/grand_cathay/units/special_units.json",
-    "data/grand_cathay/units/rare_units.json"
+    "data/grand_cathay/units/rare_units.json",
     "data/grand_cathay/wargear/magic_items.json"
 
 ];
