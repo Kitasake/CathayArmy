@@ -1,9 +1,11 @@
 const dataFiles = [
-    "data/grand_cathay/lords.json",
-    "data/grand_cathay/heroes.json",
-    "data/grand_cathay/core_units.json",
-    "data/grand_cathay/special_units.json",
-    "data/grand_cathay/rare_units.json"
+    "data/grand_cathay/units/lords.json",
+    "data/grand_cathay/units/heroes.json",
+    "data/grand_cathay/units/core_units.json",
+    "data/grand_cathay/units/special_units.json",
+    "data/grand_cathay/units/rare_units.json"
+    "data/grand_cathay/wargear/magic_items.json"
+
 ];
 
 let army = [];
@@ -46,7 +48,13 @@ async function loadAllData() {
         dataFiles.map(file => fetch(file).then(res => res.json()))
     );
 
-    renderCategories(results);
+    const magicItemsData = results.find(d => d.category === "Magic Items");
+    const unitData = results.filter(d => d.category !== "Magic Items");
+    
+    window.magicItems = magicItemsData ? magicItemsData.items : [];
+    
+    renderCategories(unitData);
+
 }
 
 function getMinimumSize(unit) {
@@ -142,6 +150,63 @@ function renderCategories(datasets) {
                 });
             }
 
+            // MOUNT SELECTION (radio group)
+            if (unit.mounts && unit.mounts.length > 0) {
+            
+                const mountDiv = document.createElement("div");
+                mountDiv.style.marginTop = "8px";
+            
+                const title = document.createElement("strong");
+                title.textContent = "Mount:";
+                mountDiv.appendChild(title);
+            
+                unit.mounts.forEach(mount => {
+            
+                    const radio = document.createElement("input");
+                    radio.type = "radio";
+                    radio.name = `${unit.name}_mount`;
+                    radio.value = mount.name;
+                    radio.dataset.cost = mount.cost;
+            
+                    const label = document.createElement("label");
+                    label.textContent = ` ${mount.name} (${mount.cost})`;
+            
+                    mountDiv.appendChild(document.createElement("br"));
+                    mountDiv.appendChild(radio);
+                    mountDiv.appendChild(label);
+                });
+            
+                unitDiv.appendChild(mountDiv);
+            }
+
+            // MAGIC ITEMS (characters only)
+            if (unit.magicItemLimit && window.magicItems.length > 0) {
+            
+                const magicDiv = document.createElement("div");
+                magicDiv.style.marginTop = "8px";
+            
+                const title = document.createElement("strong");
+                title.textContent = `Magic Items (max ${unit.magicItemLimit} pts):`;
+                magicDiv.appendChild(title);
+            
+                window.magicItems.forEach(item => {
+            
+                    const checkbox = document.createElement("input");
+                    checkbox.type = "checkbox";
+                    checkbox.value = item.name;
+                    checkbox.dataset.cost = item.cost;
+            
+                    const label = document.createElement("label");
+                    label.textContent = ` ${item.name} (+${item.cost} pts)`;
+            
+                    magicDiv.appendChild(document.createElement("br"));
+                    magicDiv.appendChild(checkbox);
+                    magicDiv.appendChild(label);
+                });
+            
+                unitDiv.appendChild(magicDiv);
+            }
+
             const button = document.createElement("button");
             button.textContent = "Add";
             button.onclick = () =>
@@ -162,55 +227,106 @@ function renderCategories(datasets) {
 }
 
 function addUnit(unit, quantity, upgradesContainer, category) {
+
     let basePoints = unit.profile.points * quantity;
     let upgrades = [];
     let upgradePoints = 0;
 
-    const inputs = upgradesContainer.querySelectorAll("input");
+    let mountSelected = null;
+    let magicItemsSelected = [];
+    let magicItemPoints = 0;
 
+    const inputs = upgradesContainer
+        .parentElement
+        .querySelectorAll("input");
+
+    // 🔥 THIS BLOCK replaces your old inputs.forEach()
     inputs.forEach(input => {
+
         if ((input.type === "checkbox" && input.checked) ||
             (input.type === "radio" && input.checked)) {
 
             const cost = parseCost(input.dataset.cost, quantity);
 
-            upgrades.push({
-                name: input.value,
-                cost: cost
-            });
+            // MOUNT
+            if (input.name && input.name.includes("_mount")) {
 
-            upgradePoints += cost;
+                mountSelected = {
+                    name: input.value,
+                    cost: cost
+                };
+
+                upgradePoints += cost;
+            }
+
+            // MAGIC ITEMS
+            else if (
+                unit.magicItemLimit &&
+                input.type === "checkbox" &&
+                window.magicItems.some(m => m.name === input.value)
+            ) {
+
+                magicItemsSelected.push({
+                    name: input.value,
+                    cost: cost
+                });
+
+                magicItemPoints += cost;
+            }
+
+            // NORMAL UPGRADES
+            else {
+
+                upgrades.push({
+                    name: input.value,
+                    cost: cost
+                });
+
+                upgradePoints += cost;
+            }
         }
     });
 
+    // 🔥 STEP 5 — MAGIC ITEM LIMIT CHECK GOES HERE
+    if (unit.magicItemLimit && magicItemPoints > unit.magicItemLimit) {
+        alert(`Magic item limit exceeded (${unit.magicItemLimit} pts max).`);
+        return;
+    }
+
+    // Add magic item cost to total upgrades
+    upgradePoints += magicItemPoints;
+
     const total = basePoints + upgradePoints;
 
-    // Simulate new total before adding
+    // Army size check
     const simulatedTotal = totalPoints + total;
 
     if (simulatedTotal > targetArmySize) {
         alert("Adding this unit exceeds the target army size.");
         return;
     }
-    
+
     if (!validateCategoryLimit(category, total)) {
         alert(`Cannot add ${unit.name}. Category limit exceeded.`);
         return;
     }
-
 
     army.push({
         name: unit.name,
         quantity: quantity,
         basePoints: basePoints,
         upgrades: upgrades,
+        mount: mountSelected,
+        magicItems: magicItemsSelected,
         total: total,
         category: category
     });
 
+
     totalPoints += total;
     updateArmyDisplay();
 }
+
 
 
 function removeUnit(index) {
@@ -228,6 +344,29 @@ function updateArmyDisplay() {
 
         li.innerHTML = `<strong>${unit.quantity}x ${unit.name}</strong> (${unit.total} pts)`;
 
+        if (unit.mount) {
+            const m = document.createElement("div");
+            m.textContent = `Mount: ${unit.mount.name} (+${unit.mount.cost} pts)`;
+            li.appendChild(m);
+        }
+
+        if (unit.magicItems && unit.magicItems.length > 0) {
+            const miDiv = document.createElement("div");
+            miDiv.innerHTML = "<em>Magic Items:</em>";
+        
+            const ul = document.createElement("ul");
+        
+            unit.magicItems.forEach(mi => {
+                const liItem = document.createElement("li");
+                liItem.textContent = `${mi.name} (+${mi.cost} pts)`;
+                ul.appendChild(liItem);
+            });
+        
+            li.appendChild(miDiv);
+            li.appendChild(ul);
+        }
+
+        
         if (unit.upgrades.length > 0) {
             const ul = document.createElement("ul");
             unit.upgrades.forEach(upg => {
