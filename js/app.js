@@ -468,5 +468,67 @@ document.getElementById("armySizeInput").addEventListener("input", (e) => {
     updateArmyDisplay();
 });
 
+function generateArmyText() {
+
+    let output = "";
+    output += `Grand Cathay Army List\n`;
+    output += `Target Size: ${targetArmySize} pts\n`;
+    output += `Total Points: ${totalPoints} pts\n`;
+    output += `Remaining: ${targetArmySize - totalPoints} pts\n\n`;
+
+    const categories = {};
+
+    army.forEach(unit => {
+        if (!categories[unit.category]) {
+            categories[unit.category] = [];
+        }
+        categories[unit.category].push(unit);
+    });
+
+    Object.keys(categories).forEach(category => {
+
+        output += `=== ${category.toUpperCase()} ===\n\n`;
+
+        categories[category].forEach(unit => {
+
+            output += `${unit.quantity}x ${unit.name} — ${unit.total} pts\n`;
+
+            if (unit.mount) {
+                output += `  Mount: ${unit.mount.name} (+${unit.mount.cost})\n`;
+            }
+
+            if (unit.upgrades.length > 0) {
+                unit.upgrades.forEach(upg => {
+                    output += `  Upgrade: ${upg.name} (+${upg.cost})\n`;
+                });
+            }
+
+            if (unit.magicItems && unit.magicItems.length > 0) {
+                unit.magicItems.forEach(mi => {
+                    output += `  Magic Item: ${mi.name} (+${mi.cost})\n`;
+                });
+            }
+
+            output += "\n";
+        });
+    });
+
+    return output;
+}
+
+document.getElementById("exportTextBtn").addEventListener("click", () => {
+
+    const text = generateArmyText();
+    const blob = new Blob([text], { type: "text/plain" });
+    const url = URL.createObjectURL(blob);
+
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = `grand_cathay_${targetArmySize}pts.txt`;
+    a.click();
+
+    URL.revokeObjectURL(url);
+});
+
 
 loadAllData();
