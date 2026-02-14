@@ -1,230 +1,133 @@
 {
+  "category": "Lords",
   "units": [
 
     {
       "id": "celestial_general",
       "name": "Celestial General",
-      "category": "lords",
-      "baseCost": 110,
-      "profile": {
-        "M": 4,
-        "WS": 6,
-        "BS": 5,
-        "S": 4,
-        "T": 4,
-        "W": 3,
-        "I": 6,
-        "A": 4,
-        "Ld": 9
-      },
-      "troopType": "Infantry (Character, Human)",
-      "baseSize": ["20x20", "25x25"],
-      "equipment": [
-        "Hand weapon",
-        "Medium armour"
+      "profile": { "points": 110 },
+      "magicItemLimit": 100,
+      "options": [
+        {
+          "group": "Melee Weapon",
+          "choices": [
+            { "name": "Additional hand weapon", "cost": 3 },
+            { "name": "Celestial blade", "cost": 3 },
+            { "name": "Spear", "cost": 3 },
+            { "name": "Light lance", "cost": 4 },
+            { "name": "Polearm", "cost": 8 },
+            { "name": "Great weapon", "cost": 12 }
+          ]
+        },
+        {
+          "group": "Ranged Weapon",
+          "choices": [
+            { "name": "Bow", "cost": 5 },
+            { "name": "Crossbow", "cost": 7 },
+            { "name": "Repeater crossbow", "cost": 6 },
+            { "name": "Handgun", "cost": 7 },
+            { "name": "Dragon fire pistol", "cost": 9 }
+          ]
+        },
+        {
+          "group": "Armour",
+          "choices": [
+            { "name": "Heavy armour", "cost": 9 },
+            { "name": "Shield", "cost": 3 }
+          ]
+        }
       ],
-      "specialRules": [
-        "Celestial Forged Armour",
-        "Will of the Dragons",
-        "Yin/Yang"
-      ],
-      "options": {
-        "chooseOneMelee": [
-          { "name": "Additional hand weapon", "cost": 3 },
-          { "name": "Celestial blade", "cost": 3 },
-          { "name": "Spear", "cost": 3 },
-          { "name": "Light lance", "cost": 4 },
-          { "name": "Polearm", "cost": 8 },
-          { "name": "Great weapon", "cost": 12 }
-        ],
-        "chooseOneRanged": [
-          { "name": "Bow", "cost": 5 },
-          { "name": "Crossbow", "cost": 7 },
-          { "name": "Repeater crossbow", "cost": 6 },
-          { "name": "Handgun", "cost": 7 },
-          { "name": "Dragon fire pistol", "cost": 9 }
-        ],
-        "armourUpgrades": [
-          { "name": "Heavy armour", "cost": 9 },
-          { "name": "Shield", "cost": 3 }
-        ],
-        "mountOptions": [
-          { "name": "Warhorse", "cost": 18 },
-          { "name": "Jade Longma", "cost": 48 },
-          { "name": "War Chariot (replacing one of the crew)", "cost": 70 },
-          { "name": "Great Spirit Longma", "cost": 60 },
-          { "name": "Celestial Lion (Yang only)", "cost": 125 },
-          { "name": "Great Moon Bird (Yin only)", "cost": 130 }
-        ],
-        "magicItemsLimit": 100
-      }
+      "mounts": [
+        { "name": "Warhorse", "cost": 18 },
+        { "name": "Jade Longma", "cost": 48 },
+        { "name": "War Chariot (replacing one of the crew)", "cost": 70 },
+        { "name": "Great Spirit Longma", "cost": 60 },
+        { "name": "Celestial Lion (Yang only)", "cost": 125 },
+        { "name": "Great Moon Bird (Yin only)", "cost": 130 }
+      ]
     },
 
     {
       "id": "dragon_blooded_shugengan",
       "name": "Dragon-Blooded Shugengan",
-      "category": "lords",
-      "baseCost": 245,
-      "profile": {
-        "M": 4,
-        "WS": 5,
-        "BS": 4,
-        "S": 4,
-        "T": 4,
-        "W": 3,
-        "I": 5,
-        "A": 3,
-        "Ld": 9
-      },
-      "troopType": "Infantry (Character, Human)",
-      "baseSize": ["20x20", "25x25"],
-      "equipment": [
-        "Hand weapon",
-        "Light armour"
+      "profile": { "points": 245 },
+      "magicItemLimit": 100,
+      "options": [
+        {
+          "name": "Upgrade to Wizard Level 4",
+          "cost": 35
+        },
+        {
+          "group": "Melee Weapon",
+          "choices": [
+            { "name": "Additional hand weapon", "cost": 3 },
+            { "name": "Celestial blade", "cost": 3 },
+            { "name": "Spear", "cost": 3 },
+            { "name": "Light lance", "cost": 3 },
+            { "name": "Polearm", "cost": 6 },
+            { "name": "Great weapon", "cost": 9 }
+          ]
+        },
+        {
+          "group": "Ranged Weapon",
+          "choices": [
+            { "name": "Bow", "cost": 4 },
+            { "name": "Crossbow", "cost": 6 },
+            { "name": "Repeater crossbow", "cost": 5 },
+            { "name": "Handgun", "cost": 6 },
+            { "name": "Dragon fire pistol", "cost": 9 }
+          ]
+        }
       ],
-      "magic": {
-        "level": 3,
-        "alignmentRequired": true
-      },
-      "specialRules": [
-        "Celestial Forged Armour",
-        "Mastery of the Elemental Winds",
-        "Will of the Dragons",
-        "Yin/Yang"
-      ],
-      "options": {
-        "upgradeWizardLevel4": 35,
-        "chooseOneMelee": [
-          { "name": "Additional hand weapon", "cost": 3 },
-          { "name": "Celestial blade", "cost": 3 },
-          { "name": "Spear", "cost": 3 },
-          { "name": "Light lance", "cost": 3 },
-          { "name": "Polearm", "cost": 6 },
-          { "name": "Great weapon", "cost": 9 }
-        ],
-        "chooseOneRanged": [
-          { "name": "Bow", "cost": 4 },
-          { "name": "Crossbow", "cost": 6 },
-          { "name": "Repeater crossbow", "cost": 5 },
-          { "name": "Handgun", "cost": 6 },
-          { "name": "Dragon fire pistol", "cost": 9 }
-        ],
-        "mountOptions": [
-          { "name": "Warhorse", "cost": 18 },
-          { "name": "Jade Longma", "cost": 48 },
-          { "name": "Great Spirit Longma", "cost": 60 },
-          { "name": "Celestial Lion (Yang only)", "cost": 125 },
-          { "name": "Great Moon Bird (Yin only)", "cost": 130 }
-        ],
-        "magicItemsLimit": 100
-      }
+      "mounts": [
+        { "name": "Warhorse", "cost": 18 },
+        { "name": "Jade Longma", "cost": 48 },
+        { "name": "Great Spirit Longma", "cost": 60 },
+        { "name": "Celestial Lion (Yang only)", "cost": 125 },
+        { "name": "Great Moon Bird (Yin only)", "cost": 130 }
+      ]
     },
 
     {
       "id": "dragon_descendant",
       "name": "Dragon Descendant",
-      "category": "lords",
-      "baseCost": 345,
-      "profile": {
-        "humanForm": {
-          "M": 4,
-          "WS": 7,
-          "BS": 4,
-          "S": 5,
-          "T": 5,
-          "W": 3,
-          "I": 7,
-          "A": 5,
-          "Ld": 10
+      "profile": { "points": 345 },
+      "magicItemLimit": 100,
+      "options": [
+        {
+          "name": "Upgrade to Wizard Level 4",
+          "cost": 35
         },
-        "dragonForm": {
-          "M": 6,
-          "WS": 7,
-          "BS": 0,
-          "S": 6,
-          "T": 6,
-          "W": 6,
-          "I": 3,
-          "A": 5,
-          "Ld": 10
+        {
+          "group": "Melee Weapon",
+          "choices": [
+            { "name": "Additional hand weapon", "cost": 3 },
+            { "name": "Celestial blade", "cost": 3 },
+            { "name": "Polearm", "cost": 10 },
+            { "name": "Great weapon", "cost": 15 }
+          ]
         }
-      },
-      "troopType": "Infantry (Character, Human/Dragon)",
-      "baseSize": [
-        "20x20",
-        "25x25",
-        "50x100",
-        "60x100",
-        "100x150"
-      ],
-      "equipment": [
-        "Hand weapon",
-        "Light armour"
-      ],
-      "magic": {
-        "level": 3,
-        "alignmentRequired": true
-      },
-      "specialRules": [
-        "Celestial Forged Armour",
-        "Mastery of the Elemental Winds",
-        "Will of the Dragons",
-        "Yin & Yang",
-        "Transformation of the Dragon"
-      ],
-      "options": {
-        "upgradeWizardLevel4": 35,
-        "chooseOneMelee": [
-          { "name": "Additional hand weapon", "cost": 3 },
-          { "name": "Celestial blade", "cost": 3 },
-          { "name": "Polearm", "cost": 10 },
-          { "name": "Great weapon", "cost": 15 }
-        ],
-        "magicItemsLimit": 100
-      },
-      "notes": [
-        "A Dragon Descendant must always be the Army General."
       ]
     },
 
     {
       "id": "lord_magistrate",
       "name": "Lord Magistrate",
-      "category": "lords",
-      "baseCost": 85,
-      "profile": {
-        "M": 4,
-        "WS": 4,
-        "BS": 4,
-        "S": 4,
-        "T": 4,
-        "W": 3,
-        "I": 4,
-        "A": 2,
-        "Ld": 9
-      },
-      "troopType": "Infantry (Character, Human)",
-      "baseSize": ["20x20", "25x25"],
-      "equipment": [
-        "Hand weapon"
+      "profile": { "points": 85 },
+      "magicItemLimit": 100,
+      "options": [
+        {
+          "group": "Additional Equipment",
+          "choices": [
+            { "name": "Dragon fire bombs", "cost": 10 },
+            { "name": "Light armour", "cost": 2 }
+          ]
+        }
       ],
-      "specialRules": [
-        "Inspiring Presence (6)",
-        "Will of the Dragons",
-        "Yin/Yang",
-        "Tactician"
-      ],
-      "options": {
-        "additionalEquipment": [
-          { "name": "Dragon fire bombs", "cost": 10 },
-          { "name": "Light armour", "cost": 2 }
-        ],
-        "mountOptions": [
-          { "name": "Warhorse", "cost": 18 },
-          { "name": "Sky Lantern (replacing one of the crew)", "cost": 85 }
-        ],
-        "magicItemsLimit": 100
-      }
+      "mounts": [
+        { "name": "Warhorse", "cost": 18 },
+        { "name": "Sky Lantern (replacing one of the crew)", "cost": 85 }
+      ]
     }
 
   ]
