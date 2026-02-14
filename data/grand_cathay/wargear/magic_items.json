@@ -222,7 +222,6 @@
         { "name": "Alchemist's Elixir of Puissance", "cost": 10, "description": "One use only. This item can be used at the start of any phase. The character gains +1 Strength and Attacks until the end of the turn." },
         { "name": "Cloak of the Moon Wind", "cost": 10, "description": "Model on foot only. The bearer of this item gains the Scouts special rule." },
         { "name": "Alchemist's Elixir of Venom", "cost": 5, "description": "One use only. This item can be used at the start of any phase. The character gains the Poisoned Attacks special rule until the end of the turn." },
-        {
         { "name": "Flag of Grand Cathay", "cost": 55, "description": "The bearer gains the Hold Your Ground (6) special rule. In addition, friendly units within 18\" count as being in Harmony if within 6\" of eligible Yin/Yang units rather than 3\"." },
         { "name": "The Great Celestial Banner", "cost": 50, "description": "The unit carrying this banner gains a 5+ Ward save." },
         { "name": "Jade Banner", "cost": 30, "description": "The unit carrying this banner gains +2 combat resolution bonus." },
@@ -241,11 +240,5 @@
         { "name": "Banner of Xen Wun", "cost": 10, "description": "Enemy units cannot choose to Stand & Shoot against the unit carrying this banner." }
   ]
 }
-
-  ]
-}
-
-      ]
-    }
 
   
