@@ -3,6 +3,61 @@
   
       "items": [
         {
+          "name": "Jade Blade of the Great Fleet",
+          "cost": 35,
+          "description": "The wielder of this weapon gains +1 Strength and the Regeneration (5+) special rule."
+        },
+        {
+          "name": "Nuku Cho's Crossbow",
+          "cost": 35,
+          "description": "Repeater crossbow. Range 24\" Strength 3. Multiple Shots (6), Rapid Fire."
+        },
+        {
+          "name": "Silver Moon Bow",
+          "cost": 30,
+          "description": "Bow. Range 30\" Strength 4. Armour Piercing (3), Multiple Shots (3)."
+        },
+        {
+          "name": "Spirit Longma Spear",
+          "cost": 30,
+          "description": "Light lance/spear. The wielder of this weapon gains the Ignores Armour saves special rule."
+        },
+        {
+          "name": "Vorpal Shard",
+          "cost": 30,
+          "description": "The wielder of this weapon always Wounds on a 2+."
+        },
+        {
+          "name": "The Brazen Blade",
+          "cost": 25,
+          "description": "This weapon has the Multiple Wounds (2) special rule. In addition, Ward saves (except Dodge and Parry) cannot be taken against Wounds caused by it."
+        },
+        {
+          "name": "Dawn Glaive",
+          "cost": 25,
+          "description": "Polearm. All enemy attacks against the wielder of this weapon suffer -1 To Hit in close combat."
+        },
+        {
+          "name": "The Sword of Reason",
+          "cost": 25,
+          "description": "Great weapon. This weapon has the Killing Blow special rules, which takes effect on a 5+ rather than a 6."
+        },
+        {
+          "name": "Ascendant Celestial Blade",
+          "cost": 20,
+          "description": "Celestial Blade. The wielder of this weapon gains +1 Strength."
+        },
+        {
+          "name": "Blade of Xen Wu",
+          "cost": 20,
+          "description": "The wielder of this weapon gains +1 Strength and +1 Attack. However, any unit joined by them cannot use their Leadership."
+        },
+        {
+          "name": "Serpent Fang",
+          "cost": 20,
+          "description": "The wielder of this weapon gains the Armour Piercing (2) and Poisoned Attacks special rules."
+        },
+        {
           "name": "Sword of Nan-Gau",
           "cost": 20,
           "description": "The wielder of this weapon gains the Armour Piercing (3) and Hatred (Chaos) special rules."
@@ -150,7 +205,46 @@
           "name": "Seal of Xing Po",
           "cost": 5,
           "description": "Dragon-Blooded Shugengan or Dragon Descendant only. The bearer of this item may choose spells from both the Lore of Yin and Yang in addition to the spells from their other lore."
-        }
+        },
+        { "name": "Alchemist's Mask", "cost": 35, "description": "Bound spell (power level 5). This item contains the Transmutation of Lead spell (see the Lore of Metal)." },
+        { "name": "Icon of the Spirit Dragon", "cost": 35, "description": "Bound spell (power level 5). This item contains the Ancestral Warriors spell (see the Lore of Yin)." },
+        { "name": "Kite of the Uttermost Airs", "cost": 35, "description": "The bearer can use this item in the Shooting phase. Choose one enemy unit with the Fly special rule within 12\" that is not in close combat; they suffer D6 Strength 4 automatic Hits." },
+        { "name": "Cleansing Water", "cost": 30, "description": "The bearer of this item and unit they join gains the Mighty Blow (1) special rule in turns that they charge." },
+        { "name": "Crackleblaze", "cost": 30, "description": "One use only. This item can be used in the Shooting phase. Place the small 3\" template with the hole anywhere within 6\". It scatters D3\". Any model under the template suffer a Strength 4 hits with the Flaming Attacks and Ignores Armour saves special rule." },
+        { "name": "Spirit Lantern", "cost": 30, "description": "The bearer of this item gains the Terror special rule. In addition, they may re-roll To Wound rolls of 1 against Daemons, Undead and Vampires." },
+        { "name": "Catalytic Kiln", "cost": 25, "description": "All enemy models in base contact with the bearer of this item suffer a Strength 3 Hit with the Flaming Attacks special rule at the start of each close combat phase. Models with Immunity (Flaming Attacks) suffer a Strength 2 Hit." },
+        { "name": "Astromancer's Spyglass", "cost": 20, "description": "The bearer of this item gives you +1 to choose which side of the table to deploy on, choosing the first turn and rolling for Ambushers to arrive. In addition, all enemy units within 30\" must reveal all Hidden models and magic items they might have." },
+        { "name": "Fan of the Magister", "cost": 20, "description": "Lord Magistrate or Magistrate only. The bearer of this item allows friendly units to re-roll failed Leadership tests when attempting to use the Tactician special rule. In addition, enemy units within 12\" must re-roll successful tests to march, redirect, restrain from pursuit and reform." },
+        { "name": "Fires of Nan-Gau", "cost": 15, "description": "One use only. The bearer of this item gains a Breath Weapon with Strength 4 and the Flaming Attacks special rule." },
+        { "name": "Golden Lion", "cost": 15, "description": "The bearer of this item and any unit they are with may re-roll failed Psychology tests." },
+        { "name": "Vermillion Quills", "cost": 15, "description": "One use only. This item can be used at the start of close combat. The bearer of this item can re-roll all failed To Hit and To Wound rolls this turn." },
+        { "name": "Alchemist's Elixir of Iron Skin", "cost": 10, "description": "One use only. This item can be used at the start of any phase. The character gains the Natural Armour save (3+) special rule until the end of the turn." },
+        { "name": "Alchemist's Elixir of Puissance", "cost": 10, "description": "One use only. This item can be used at the start of any phase. The character gains +1 Strength and Attacks until the end of the turn." },
+        { "name": "Cloak of the Moon Wind", "cost": 10, "description": "Model on foot only. The bearer of this item gains the Scouts special rule." },
+        { "name": "Alchemist's Elixir of Venom", "cost": 5, "description": "One use only. This item can be used at the start of any phase. The character gains the Poisoned Attacks special rule until the end of the turn." },
+        {
+        { "name": "Flag of Grand Cathay", "cost": 55, "description": "The bearer gains the Hold Your Ground (6) special rule. In addition, friendly units within 18\" count as being in Harmony if within 6\" of eligible Yin/Yang units rather than 3\"." },
+        { "name": "The Great Celestial Banner", "cost": 50, "description": "The unit carrying this banner gains a 5+ Ward save." },
+        { "name": "Jade Banner", "cost": 30, "description": "The unit carrying this banner gains +2 combat resolution bonus." },
+        { "name": "Standard of Wei Jin", "cost": 30, "description": "The unit carrying this banner gains +1 to their Leadership, and enemy units in base contact suffer -1 to their Leadership." },
+        { "name": "Banner of Feng Shi", "cost": 25, "description": "The unit carrying this banner gains the Immunity (Psychology) and Magical Attacks special rules." },
+        { "name": "Banner of the Empress' Eye", "cost": 25, "description": "The unit carrying this banner gains +1 to Hit with missile weapons." },
+        { "name": "Banner of the Moon Empress", "cost": 25, "description": "Infantry only. The unit carrying this banner gains the Scouts special rule." },
+        { "name": "Revered Banner of the Ancestors", "cost": 25, "description": "The unit carrying this banner gains +1 Weapon Skill." },
+        { "name": "Serene Cloud Prayer Flag", "cost": 25, "description": "The unit carrying this banner gains the Cold-blooded special rule." },
+        { "name": "Standard of Heavenly Fury", "cost": 25, "description": "One use only. This item can be used at the start of any enemy Movement phase. Until the start of your next turn, no enemy unit within 24\" of this banner can use the Fly special rule." },
+        { "name": "Banner of the Dragon's Wrath", "cost": 20, "description": "Infantry only. The unit carrying this banner gains the Flaming Attacks and Impact Hits (1) special rules." },
+        { "name": "Standard of Shang-Yang", "cost": 20, "description": "The unit carrying this banner may re-roll 1's when taking armour saves." },
+        { "name": "Dragon's Eye Banner", "cost": 15, "description": "Whenever the unit carrying this standard is the target of an enemy spell, roll a D6. On a 3+, the enemy Wizard must choose another target. If no other target is available, the spell cannot be cast." },
+        { "name": "Bastion Standard", "cost": 15, "description": "The unit carrying this banner only suffer half (rounding up) their normal Leadership penalty when taking Break tests and may re-roll failed Break tests." },
+        { "name": "Standard of Nan-Gau", "cost": 10, "description": "The unit carrying this banner gains 6\" to the range of their missile weapons." },
+        { "name": "Banner of Xen Wun", "cost": 10, "description": "Enemy units cannot choose to Stand & Shoot against the unit carrying this banner." }
+  ]
+}
+
+  ]
+}
+
       ]
     }
 
